@@ -1,0 +1,1081 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": []
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "source": [
+        "1. What are data structures, and why are they important?\n",
+        "\n",
+        "👉 Data structures are ways of organizing and storing data (e.g., list, tuple, dictionary, set). They are important because they make storage, searching, insertion, deletion, and manipulation of data more efficient."
+      ],
+      "metadata": {
+        "id": "h8WmNvzxQJng"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "2. Difference between mutable and immutable data types with examples.\n",
+        "\n",
+        "👉 Mutable = can be changed (e.g., list, dictionary, set).\n",
+        "👉 Immutable = cannot be changed (e.g., tuple, string).\n",
+        "\n",
+        "# Mutable\n",
+        "a = [1, 2, 3]\n",
+        "a[0] = 10   # works\n",
+        "\n",
+        "# Immutable\n",
+        "b = (1, 2, 3)\n",
+        "# b[0] = 10  # error"
+      ],
+      "metadata": {
+        "id": "vUgIak3lRruM"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "3. List vs Tuple\n",
+        "\n",
+        "List is mutable, Tuple is immutable.\n",
+        "\n",
+        "List is slower, Tuple is faster.\n",
+        "\n",
+        "List uses [], Tuple uses ()."
+      ],
+      "metadata": {
+        "id": "QB_QWgzYR43l"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "4. How dictionaries store datadata\n",
+        "\n",
+        "👉 As key-value pairs using hash tables internally."
+      ],
+      "metadata": {
+        "id": "i5CAXH4MQ2PE"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "5. Why use a set instead of a list?\n",
+        "\n",
+        "👉 Set automatically removes duplicates and membership checking is faster."
+      ],
+      "metadata": {
+        "id": "xJxqDMExR_zq"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "6. What is a string, and how is it different from a list?\n",
+        "\n",
+        "👉 String = sequence of characters (immutable).\n",
+        "\n",
+        "👉 List = sequence of elements (mutable"
+      ],
+      "metadata": {
+        "id": "Eq7NbjKiSQuG"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "7. How do tuples ensure data integrity?\n",
+        "\n",
+        "👉 Because they are immutable, preventing accidental modification."
+      ],
+      "metadata": {
+        "id": "Zdbawic1SS7a"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "8. What is a hash table, and how does it relate to dictionaries?\n",
+        "\n",
+        "👉 Hash table = structure that maps keys to values using hash functions.\n",
+        "\n",
+        "👉 Python dictionaries are implemented using hash tables."
+      ],
+      "metadata": {
+        "id": "ov8VTbExSZly"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "9. Can lists contain different data types?\n",
+        "\n",
+        "👉 Yes, a list can contain integers, strings, floats, etc."
+      ],
+      "metadata": {
+        "id": "xEYZVICySjGi"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "10. Why are strings immutable?\n",
+        "\n",
+        "👉 For memory efficiency and security. Any modification creates a new object.\n"
+      ],
+      "metadata": {
+        "id": "juYX8sfESoCn"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "11. Advantages of dictionaries over lists\n",
+        "\n",
+        "👉 Faster access using keys (O(1) complexity), while lists need index/searching."
+      ],
+      "metadata": {
+        "id": "vVk6B17aSu8j"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "12. When is tuple preferable over list?\n",
+        "\n",
+        "👉 When data should not change, e.g., (latitude, longitude)."
+      ],
+      "metadata": {
+        "id": "Sji44xrmS0cY"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "13. How do sets handle duplicates?\n",
+        "\n",
+        "👉 They automatically remove duplicates.\n"
+      ],
+      "metadata": {
+        "id": "_y5aXTrCS7BZ"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "14. “in” keyword in lists vs dictionaries\n",
+        "\n",
+        "👉 In lists: checks if an element exists.\n",
+        "\n",
+        "👉 In dictionaries: checks if a key exists (not values)."
+      ],
+      "metadata": {
+        "id": "ol37ucb9S_rD"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "15. Can you modify tuple elements?\n",
+        "\n",
+        "👉 No, because tuples are immutable."
+      ],
+      "metadata": {
+        "id": "8Tja86biTFFh"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "16. Nested dictionary example\n",
+        "\n",
+        "👉 A dictionary inside another dictionary.\n",
+        "\n",
+        "student = {\"name\": \"Riya\", \"marks\": {\"math\": 90, \"english\": 85}}"
+      ],
+      "metadata": {
+        "id": "rixpEusQTKKk"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "17. Time complexity of accessing dictionary elements\n",
+        "\n",
+        "👉 O(1) on average."
+      ],
+      "metadata": {
+        "id": "7TmoYAucTX08"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "18. When are lists preferred over dictionaries?\n",
+        "\n",
+        "👉 When order is important and only sequential access is needed."
+      ],
+      "metadata": {
+        "id": "tPmqC1yITib3"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "19. Why are dictionaries unordered?\n",
+        "\n",
+        "👉 Because they rely on hash functions. (Note: from Python 3.7+, insertion order is preserved.)\n"
+      ],
+      "metadata": {
+        "id": "Lf6Wu7wqToRh"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "20. Difference in data retrieval (list vs dictionary)\n",
+        "\n",
+        "👉 List: retrieve by index.\n",
+        "\n",
+        "👉 Dictionary: retrieve by key."
+      ],
+      "metadata": {
+        "id": "7E6Zd2vHTuOr"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "1.\n",
+        "\n",
+        "name = \"Bittu\"\n",
+        "print(name)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 0
+        },
+        "id": "4hJBSYJbT2u-",
+        "outputId": "7cc0626b-28a9-474f-f339-1b5b7b4e133e"
+      },
+      "execution_count": 3,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Bittu\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "2.\n",
+        "\n",
+        "print(len(\"Hello World\"))\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 0
+        },
+        "id": "ppj9tl9kUEx6",
+        "outputId": "50d1a522-a0cf-4895-bb14-7625011624f0"
+      },
+      "execution_count": 5,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "11\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "3.\n",
+        "\n",
+        "print(\"Python Programming\"[:3])\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 0
+        },
+        "id": "djw9NsMWUS7O",
+        "outputId": "98110db4-4966-4504-e87e-acd36bc42c6b"
+      },
+      "execution_count": 6,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Pyt\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "4.\n",
+        "\n",
+        "print(\"hello\".upper())"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 0
+        },
+        "id": "g_DvYKrjUcqv",
+        "outputId": "0d145f49-84f1-4842-d9ba-ce27c64e7f2e"
+      },
+      "execution_count": 7,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "HELLO\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "5.\n",
+        "\n",
+        "print(\"I like apple\".replace(\"apple\", \"orange\"))"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 0
+        },
+        "id": "MQZI2TNLUnFa",
+        "outputId": "ca877fa6-c613-4543-b093-779ad193112d"
+      },
+      "execution_count": 8,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "I like orange\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "6.\n",
+        "\n",
+        "numbers = [1, 2, 3, 4, 5]\n",
+        "print(numbers)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 0
+        },
+        "id": "pD2AU0fxUzZU",
+        "outputId": "0d68b273-daf6-4fe9-9573-990845f5e7cd"
+      },
+      "execution_count": 9,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[1, 2, 3, 4, 5]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "7.\n",
+        "\n",
+        "lst = [1, 2, 3, 4]\n",
+        "lst.append(10)\n",
+        "print(lst)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 0
+        },
+        "id": "a26EhFrLU4ul",
+        "outputId": "8b52e11c-06af-4799-b0dd-d494b9d51ddb"
+      },
+      "execution_count": 10,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[1, 2, 3, 4, 10]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "8.\n",
+        "\n",
+        "lst = [1, 2, 3, 4, 5]\n",
+        "lst.remove(3)\n",
+        "print(lst)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 0
+        },
+        "id": "3Af5ndD-U_xw",
+        "outputId": "c9d4d8c5-709b-4051-c5e4-f5ef7631d5cc"
+      },
+      "execution_count": 11,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[1, 2, 4, 5]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "9.\n",
+        "\n",
+        "lst = ['a', 'b', 'c', 'd']\n",
+        "print(lst[1])\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 0
+        },
+        "id": "XeyCNMrcVI9b",
+        "outputId": "f3ceab96-162a-4543-8020-ea12d6398f59"
+      },
+      "execution_count": 12,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "b\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "10.\n",
+        "\n",
+        "lst = [10, 20, 30, 40, 50]\n",
+        "print(lst[::-1])\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 0
+        },
+        "id": "m6OKGVLYVVRD",
+        "outputId": "acb72b68-108e-4cbb-e786-37d79749aaa6"
+      },
+      "execution_count": 13,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[50, 40, 30, 20, 10]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "11.\n",
+        "\n",
+        "t = (100, 200, 300)\n",
+        "print(t)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 0
+        },
+        "id": "eKrt0giRVY85",
+        "outputId": "7efeb97f-fe65-42c1-93bd-a7f877fce6e3"
+      },
+      "execution_count": 14,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "(100, 200, 300)\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "12.\n",
+        "\n",
+        "t = ('red', 'green', 'blue', 'yellow')\n",
+        "print(t[-2])"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 0
+        },
+        "id": "QKxu0MOMVfON",
+        "outputId": "84e2a8d6-3e88-4877-d584-dd35c0c78616"
+      },
+      "execution_count": 15,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "blue\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "13.\n",
+        "\n",
+        "t = (10, 20, 5, 15)\n",
+        "print(min(t))"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 0
+        },
+        "id": "u9ElrllXVk8Y",
+        "outputId": "d7b91767-97a8-44b9-8051-62d7eb54c1cc"
+      },
+      "execution_count": 16,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "5\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "14.\n",
+        "\n",
+        "t = ('dog', 'cat', 'rabbit')\n",
+        "print(t.index(\"cat\"))\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 0
+        },
+        "id": "tm2Mq7WGVrDE",
+        "outputId": "85dcbd94-ec87-4e7d-ff81-449f6b40554c"
+      },
+      "execution_count": 17,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "1\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "15.\n",
+        "\n",
+        "fruits = (\"apple\", \"banana\", \"mango\")\n",
+        "print(\"kiwi\" in fruits)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 0
+        },
+        "id": "694FUlIiV0fJ",
+        "outputId": "5addaada-54ea-4e79-ef3f-2ac4dfcbde51"
+      },
+      "execution_count": 18,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "False\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "16.\n",
+        "\n",
+        "s = {'a', 'b', 'c'}\n",
+        "print(s)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 0
+        },
+        "id": "0pnfHYCUV5Cm",
+        "outputId": "9008c3f1-31e0-4275-a4f0-5f1202756443"
+      },
+      "execution_count": 19,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "{'b', 'a', 'c'}\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "17.\n",
+        "\n",
+        "s = {1, 2, 3, 4, 5}\n",
+        "s.clear()\n",
+        "print(s)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 0
+        },
+        "id": "JuwJ3JIDV_ZA",
+        "outputId": "6cb16a04-1810-408a-c102-8ffa81d5bd8e"
+      },
+      "execution_count": 20,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "set()\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "18.\n",
+        "\n",
+        "s = {1, 2, 3, 4}\n",
+        "s.remove(4)\n",
+        "print(s)\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 0
+        },
+        "id": "9JhuithpWGb0",
+        "outputId": "0c0d2ae2-f624-4fe4-9b89-758eba63d4e4"
+      },
+      "execution_count": 21,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "{1, 2, 3}\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "19.\n",
+        "\n",
+        "s1 = {1, 2, 3}\n",
+        "s2 = {3, 4, 5}\n",
+        "print(s1.union(s2))\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 0
+        },
+        "id": "z6H6x4i9WL4A",
+        "outputId": "3819801a-0624-4fb6-cfe9-e3ed9f50ff27"
+      },
+      "execution_count": 22,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "{1, 2, 3, 4, 5}\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "20.\n",
+        "\n",
+        "s1 = {1, 2, 3}\n",
+        "s2 = {2, 3, 4}\n",
+        "print(s1.intersection(s2))"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 0
+        },
+        "id": "S4hBsFMmWSt4",
+        "outputId": "dc548eb6-8622-4650-d096-dc3607fdbe60"
+      },
+      "execution_count": 23,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "{2, 3}\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "21.\n",
+        "\n",
+        "d = {\"name\": \"John\", \"age\": 25, \"city\": \"New York\"}\n",
+        "print(d)\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 0
+        },
+        "id": "IG8uNKpjXoXb",
+        "outputId": "b927aaf6-371e-4840-802c-692b0cd2fa0c"
+      },
+      "execution_count": 26,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "{'name': 'John', 'age': 25, 'city': 'New York'}\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "22.\n",
+        "\n",
+        "d = {'name': 'John', 'age': 25}\n",
+        "d['country'] = \"USA\"\n",
+        "print(d)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 0
+        },
+        "id": "LLOvRla6X4Eq",
+        "outputId": "279f2ed2-b0f4-4bf8-b11d-1bb714dd07dc"
+      },
+      "execution_count": 27,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "{'name': 'John', 'age': 25, 'country': 'USA'}\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "23.\n",
+        "\n",
+        "d = {'name': 'Alice', 'age': 30}\n",
+        "print(d['name'])"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 0
+        },
+        "id": "S51VpEFzX9bJ",
+        "outputId": "3260b8c8-eb66-40f7-e82d-2d036b06ef7b"
+      },
+      "execution_count": 28,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Alice\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "24.\n",
+        "\n",
+        "d = {'name': 'Bob', 'age': 22, 'city': 'New York'}\n",
+        "del d['age']\n",
+        "print(d)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 0
+        },
+        "id": "xR4mbnzvYEnb",
+        "outputId": "e2324e0f-081a-4f39-8f24-21ee7fcb4b03"
+      },
+      "execution_count": 29,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "{'name': 'Bob', 'city': 'New York'}\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "25.\n",
+        "\n",
+        "d = {'name': 'Alice', 'city': 'Paris'}\n",
+        "print(\"city\" in d)\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 0
+        },
+        "id": "-WFi8kb1YfAW",
+        "outputId": "9e651f81-ef73-4767-f44e-c5312408f898"
+      },
+      "execution_count": 31,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "True\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "26.\n",
+        "\n",
+        "lst = [1, 2, 3]\n",
+        "t = (4, 5, 6)\n",
+        "d = {\"a\": 1, \"b\": 2}\n",
+        "print(lst, t, d)\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 0
+        },
+        "id": "1zNRSSIlYoBn",
+        "outputId": "fd085669-4d1c-4434-8877-aa4fd2075ba0"
+      },
+      "execution_count": 32,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[1, 2, 3] (4, 5, 6) {'a': 1, 'b': 2}\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "27.\n",
+        "\n",
+        "import random\n",
+        "lst = random.sample(range(1, 101), 5)\n",
+        "lst.sort()\n",
+        "print(lst)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 0
+        },
+        "id": "25ZJRVlgYt9F",
+        "outputId": "399f7bc0-a530-4f46-9a0d-3e715a1481c7"
+      },
+      "execution_count": 33,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[12, 25, 56, 60, 69]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "28.\n",
+        "\n",
+        "lst = [\"apple\", \"banana\", \"cherry\", \"date\"]\n",
+        "print(lst[3])\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 0
+        },
+        "id": "vi6PaFSpY1Ku",
+        "outputId": "981c5907-4497-4eec-d28b-48f2dc6dcc8c"
+      },
+      "execution_count": 34,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "date\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "29.\n",
+        "\n",
+        "d1 = {\"a\": 1, \"b\": 2}\n",
+        "d2 = {\"c\": 3, \"d\": 4}\n",
+        "d1.update(d2)\n",
+        "print(d1)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 0
+        },
+        "id": "3w18kAANZBnd",
+        "outputId": "2b6f66c8-bd61-4298-8546-9e74c399b589"
+      },
+      "execution_count": 35,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "{'a': 1, 'b': 2, 'c': 3, 'd': 4}\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "30.\n",
+        "\n",
+        "lst = [\"apple\", \"banana\", \"apple\", \"cherry\"]\n",
+        "print(set(lst))"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 0
+        },
+        "id": "ILDqK3GZZGzG",
+        "outputId": "d3e70574-3894-49bc-f402-90e73d46ee60"
+      },
+      "execution_count": 36,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "{'banana', 'apple', 'cherry'}\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
